@@ -36,7 +36,7 @@ class firebase_con:
             for k in todict.keys():
                 result[k] = result.get(k, 0) + todict[k]
 
-        N = 10
+        N = 20
         res = sorted(result.items(), key = lambda x: x[1], reverse = True)[:N];
         firebase_con.updateKewrod(res);
 
@@ -66,9 +66,12 @@ class firebase_con:
                 counter[value] = 1
 
         counter = commonUtil.deleteDict(counter);
+        
+        print(counter);
+
 
         # TOP10 추출
-        N = 10
+        N = 20
         res = sorted(counter.items(), key = lambda x: x[1], reverse = True)[:N];
             
         return res;
